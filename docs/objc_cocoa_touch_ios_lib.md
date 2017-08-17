@@ -81,9 +81,7 @@ ADECMASTBinding* aDECMASTBinding = [[ADECMASTBinding alloc]init] ;
 
 ### <a name="create_do_get_summary_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".ADECMASTBindingController.createDoGetSummaryAsyncWithBody") createDoGetSummaryAsyncWithBody
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```objc

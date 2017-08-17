@@ -123,9 +123,7 @@ var controller = lib.ADECMASTBindingController;
 
 ### <a name="create_do_get_summary"></a>![Method: ](https://apidocs.io/img/method.png ".ADECMASTBindingController.createDoGetSummary") createDoGetSummary
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```javascript

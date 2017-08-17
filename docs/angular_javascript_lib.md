@@ -98,8 +98,8 @@ Import the reference to the generated SDK files inside your html file like:
 
     <!-- Models -->
     <script src="scripts/UrnADECMASTLib/Models/BaseModel.js"></script>
-    <script src="scripts/UrnADECMASTLib/Models/DoGetSummaryResponse.js"></script>
     <script src="scripts/UrnADECMASTLib/Models/UrnADECMASTSummaryResult.js"></script>
+    <script src="scripts/UrnADECMASTLib/Models/DoGetSummaryResponse.js"></script>
     <script src="scripts/UrnADECMASTLib/Models/DoGetSummary.js"></script>
 
     ...
@@ -183,9 +183,7 @@ The singleton instance of the ``` ADECMASTBindingController ``` class can be acc
 
 ### <a name="create_do_get_summary"></a>![Method: ](https://apidocs.io/img/method.png ".ADECMASTBindingController.createDoGetSummary") createDoGetSummary
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```javascript

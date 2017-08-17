@@ -117,9 +117,7 @@ ADECMASTBindingController aDECMASTBinding = client.getADECMASTBinding();
 
 ### <a name="create_do_get_summary_async"></a>![Method: ](https://apidocs.io/img/method.png "edu4547.stsci.faxafloi.controllers.ADECMASTBindingController.createDoGetSummaryAsync") createDoGetSummaryAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```java

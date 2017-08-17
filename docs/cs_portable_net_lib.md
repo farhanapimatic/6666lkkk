@@ -89,9 +89,7 @@ ADECMASTBindingController aDECMASTBinding = client.ADECMASTBinding;
 
 ### <a name="create_do_get_summary"></a>![Method: ](https://apidocs.io/img/method.png "UrnADECMAST.PCL.Controllers.ADECMASTBindingController.CreateDoGetSummary") CreateDoGetSummary
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```csharp

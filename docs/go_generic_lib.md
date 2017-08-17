@@ -115,9 +115,7 @@ aDECMASTBinding := adec_mast_binding_pkg.NewADEC_MAST_BINDING()
 
 ### <a name="create_do_get_summary"></a>![Method: ](https://apidocs.io/img/method.png ".adec_mast_binding_pkg.CreateDoGetSummary") CreateDoGetSummary
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```go

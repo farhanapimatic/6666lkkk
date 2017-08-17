@@ -97,9 +97,7 @@ aDECMASTBinding = client.adecmast_binding
 
 ### <a name="create_do_get_summary"></a>![Method: ](https://apidocs.io/img/method.png ".ADECMASTBindingController.create_do_get_summary") create_do_get_summary
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
+> doGetSummary
 
 
 ```ruby
