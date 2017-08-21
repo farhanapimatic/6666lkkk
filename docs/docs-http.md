@@ -1,14 +1,30 @@
 # 
 
+this is new file that i am looking at
+
 
 
 ## Base URL
 
-The Base URL for this API is `http://faxafloi.stsci.edu:4547/soap/`
+The Base URL for this API is `http://adsabs.harvard.edu/`
 
 
 
+## Authentication
+This API uses `OAuth v2.0` with `Client Credentials` grant type.
 
+**Access Token URL:** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h` 
+
+
+
+### Scopes
+
+The API makes use of the following OAuth scopes: 
+
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| fdg | dfg | TODO: add a description |
+| dfg | dfg | TODO: add a description |
 
 
 
@@ -16,49 +32,784 @@ The Base URL for this API is `http://faxafloi.stsci.edu:4547/soap/`
 
 # <a name="api_reference"></a>API Reference
 
-* [ADEC_MAST_Binding](#adec_mast_binding)
+* [BibcodeQueryBinding](#bibcode_query_binding)
+* [OAuth Authorization](#o_auth_authorization)
 
-## <a name="adec_mast_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "ADEC_MAST_Binding") ADEC_MAST_Binding
-
-
-### <a name="do_get_summary"></a>![Endpoint: ](https://apidocs.io/img/method.png "doGetSummary") doGetSummary
+## <a name="bibcode_query_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "BibcodeQueryBinding") BibcodeQueryBinding
 
 
-**`POST`** `/doGetSummary`
-
-> doGetSummary
+### <a name="get_bibcode"></a>![Endpoint: ](https://apidocs.io/img/method.png "getBibcode") getBibcode
 
 
+**`GET`** `/cgi-bin/nph-bib_query`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
 
 
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
 
-#### Request Body
-Raw 
 
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| [doGetSummary](#do_get_summary) |  ``` Required ```  | TODO: Add description | 
-
- Example 
-``` 
-{
-  "ra": 145.051046197792,
-  "dec": 145.051046197792,
-  "radius": 145.051046197792
-}
-``` 
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| -------------------------------- |
+| bibcode | [string](#api_types) |  ``` Required ```  | TODO: Add a parameter description | `"bibcode"` | 
+| db_key | [string](#api_types) |  ``` Required ```  | TODO: Add a parameter description | `"db_key"` | 
+| data_type | [string](#api_types) |  ``` Required ```  | TODO: Add a parameter description | `"data_type"` | 
 
 #### Responses
 **200** 
 
 
-Body ([doGetSummaryResponse](#do_get_summary_response)) 
+Body ([returnBibcode](#return_bibcode)) 
 ```
 {
-  "return": "return"
+  "body": "body"
+}
+```
+
+
+[Back to API Reference](#api_reference)
+
+## <a name="o_auth_authorization"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "OAuth Authorization") OAuth Authorization
+
+
+### <a name="request_token"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token") request token
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 210,
+  "scope": "scope",
+  "expiry": 210
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token1"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token1") request token1
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token2"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token2") request token2
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token11"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token11") request token11
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token21"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token21") request token21
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token11"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token11") request token11
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token1"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token1") request token1
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token2"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token2") request token2
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token3"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token3") request token3
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+
+
+### <a name="request_token"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token") request token
+
+
+**`POST`** `/fhsdjfhsd  fsduifh iodfhsdifh oifhisdf h`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+
+
+#### Request Headers
+>Content-Type=application/x-www-form-urlencoded;
+>Authorization="Authorization";
+
+#### Request Body
+Url Encoded
+
+> Additional optional form parameters are allowed
+
+| Parameter | Type | Tags | Description | Default Value |
+|-----------|------| ---- |-------------| ------------- | 
+| grant_type | [string](#api_types) |  ```Constant ```  ``` Required ```  | Grant Type | `"client_credentials"` | 
+| scope | [string](#api_types) |  ``` Optional ```  | Requested scopes as a space-delimited list. |  | 
+
+##### Example
+```
+ grant_type = client_credentials 
+ scope = "scope" 
+```
+
+#### Responses
+**200** 
+
+
+Body ([OAuthToken](#o_auth_token)) 
+```
+{
+  "access_token": "access_token",
+  "token_type": "token_type",
+  "expires_in": 46,
+  "scope": "scope",
+  "expiry": 46
+}
+```
+
+
+**400** 
+
+> OAuth 2 provider returned an error.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
+}
+```
+**401** 
+
+> OAuth 2 provider says client authentication failed.
+
+Body ([OAuthProvider](#o_auth_provider)) 
+```
+{
+  "error": "invalid_request",
+  "error_description": "error_description",
+  "error_uri": "error_uri"
 }
 ```
 
@@ -86,7 +837,7 @@ This section provides details on the available types. The primitive types availa
 
 
 In addition to the above types, the following complex types are also available:
-### <a name="urn:adec_mast_summary_result"></a>![Model: ](https://apidocs.io/img/method.png "urn:ADEC_MAST_SummaryResult") urn:ADEC_MAST_SummaryResult
+### <a name="return_bibcode"></a>![Model: ](https://apidocs.io/img/method.png "returnBibcode") returnBibcode
 
 
 
@@ -97,40 +848,805 @@ In addition to the above types, the following complex types are also available:
 
 | Name | Type | Tags | Description |
 |-----------|------| ---- |-------------| 
-| missionName | [string](#api_types) |  ``` Required ```  | TODO: Add a property description | 
-| dataIdCount | [number](#api_types) |  ``` Required ```  | TODO: Add a property description | 
+| body | [string](#api_types) |  ``` Required ```  | TODO: Add a property description | 
 
 
 
 
-### <a name="do_get_summary_response"></a>![Model: ](https://apidocs.io/img/method.png "doGetSummaryResponse") doGetSummaryResponse
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
 
 
 
-> TODO: Add a method description
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
 
 
 
 
 | Name | Type | Tags | Description |
 |-----------|------| ---- |-------------| 
-| return | [string](#api_types) |  ``` Required ```  | TODO: Add a property description | 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
 
 
 
 
-### <a name="do_get_summary"></a>![Model: ](https://apidocs.io/img/method.png "doGetSummary") doGetSummary
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
 
 
 
-> TODO: Add a method description
+> OAuth 2 Authorization endpoint exception
 
 
 
 
 | Name | Type | Tags | Description |
 |-----------|------| ---- |-------------| 
-| ra | [precision](#api_types) |  ``` Required ```  | TODO: Add a property description | 
-| dec | [precision](#api_types) |  ``` Required ```  | TODO: Add a property description | 
-| radius | [precision](#api_types) |  ``` Required ```  | TODO: Add a property description |
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. | 
+
+
+
+
+### <a name="o_auth_scope"></a>![Model: ](https://apidocs.io/img/method.png "OAuth Scope") OAuth Scope
+
+
+
+> OAuth 2 scopes supported by the API
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `dfg` | TODO: Add description | 
+| `dfg` | TODO: Add description | 
+
+
+
+
+### <a name="o_auth_token"></a>![Model: ](https://apidocs.io/img/method.png "OAuthToken") OAuthToken
+
+
+
+> OAuth 2 Authorization endpoint response
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| access_token | [string](#api_types) |  ``` Required ```  | Access token | 
+| token_type | [string](#api_types) |  ``` Required ```  | Type of access token | 
+| expires_in | [long](#api_types) |  ``` Optional ```  | Time in seconds before the access token expires | 
+| scope | [string](#api_types) |  ``` Optional ```  | List of scopes granted<br>This is a space-delimited list of strings. | 
+| expiry | [long](#api_types) |  ``` Optional ```  | Time of token expiry as unix timestamp (UTC) | 
+
+
+
+
+### <a name="o_auth_provider"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProvider") OAuthProvider
+
+
+
+> OAuth 2 Authorization endpoint exception
+
+
+
+
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| error | [OAuthProviderError](#o_auth_provider_error) |  ``` Required ```  | Error code | 
+| error_description | [string](#api_types) |  ``` Optional ```  | Human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | 
+| error_uri | [string](#api_types) |  ``` Optional ```  | A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error | 
+
+
+
+
+### <a name="o_auth_provider_error"></a>![Model: ](https://apidocs.io/img/method.png "OAuthProviderError") OAuthProviderError
+
+
+
+> OAuth 2 Authorization error codes
+
+
+
+
+This type must take a value from the following [string](#api_types) enumeration of values:
+
+| Value | Description |
+| ----- | --------------- |
+| `invalid_request` | The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed. | 
+| `invalid_client` | Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method). | 
+| `invalid_grant` | The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client. | 
+| `unauthorized_client` | The authenticated client is not authorized to use this authorization grant type. | 
+| `unsupported_grant_type` | The authorization grant type is not supported by the authorization server. | 
+| `invalid_scope` | The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner. |
 

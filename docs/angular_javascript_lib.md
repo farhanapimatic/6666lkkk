@@ -1,5 +1,7 @@
 # Getting started
 
+this is new file that i am looking at
+
 ## How to Build
 
 The generated SDK requires AngularJS framework to work. If you do not already have angular downloaded, please go ahead and do it from [here](https://angularjs.org/).
@@ -13,10 +15,10 @@ The following section describes how to use the generated SDK in an existing/new 
 Perform the following steps to configure angular and the SDK:
 + Make a `scripts` folder inside the root folder of the project. If you already have a `scripts` folder, skip to the next step.
 + Move the `angular.min.js` file inside the scripts folder. 
-+ Move the `UrnADECMASTLib` folder inside the scripts folder.
++ Move the `BibcodeQueryLib` folder inside the scripts folder.
 + If any of the Custom Types in your API have `Date`/`Datetime` type fields or any endpoint has `Date`/`Datetime` response, you will need to download angular-moment and moment.js. Move these 2 files into the `scripts` folder as well.
 
-![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=urn%3AADEC_MAST-Angular&projectName=UrnADECMASTLib)
+![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=BibcodeQuery-Angular&projectName=BibcodeQueryLib)
 
 ### 2. Open Project Folder
 Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.  
@@ -24,7 +26,7 @@ Click on `File` and select `Open Folder`
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=urn%3AADEC_MAST-Angular)
+![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=BibcodeQuery-Angular)
 
 ### 3. Create an Angular Application
 Since Angular JS is used for client-side web development, in order to use the generated library, you will have to develop an application first.
@@ -61,7 +63,7 @@ Skip to the next step if you are working with an existing project and already ha
 </html>
 ```
 
-![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=urn%3AADEC_MAST-Angular)
+![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=BibcodeQuery-Angular)
 
 ### 5. Including links to Angular in HTML file
 Your HTML file needs to have a link to `angular.min.js` file to use Angular-JS. Add the link using `script` tags inside the `head` section of `index.html` like:
@@ -81,26 +83,31 @@ Import the reference to the generated SDK files inside your html file like:
 <head>
     ...
     <!-- Helper files -->
-    <script src="scripts/UrnADECMASTLib/Module.js"></script>
-    <script src="scripts/UrnADECMASTLib/Configuration.js"></script>
-    <script src="scripts/UrnADECMASTLib/ModelFactory.js"></script>
-    <script src="scripts/UrnADECMASTLib/ObjectMapper.js"></script>
-    <script src="scripts/UrnADECMASTLib/APIHelper.js"></script>
-    <script src="scripts/UrnADECMASTLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/UrnADECMASTLib/Http/Client/RequestClient.js"></script>
-    <script src="scripts/UrnADECMASTLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/UrnADECMASTLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/BibcodeQueryLib/Module.js"></script>
+    <script src="scripts/BibcodeQueryLib/Configuration.js"></script>
+    <script src="scripts/BibcodeQueryLib/ModelFactory.js"></script>
+    <script src="scripts/BibcodeQueryLib/ObjectMapper.js"></script>
+    <script src="scripts/BibcodeQueryLib/APIHelper.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/RequestClient.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Response/HttpResponse.js"></script>
 
     <!-- API Controllers -->
-    <script src="scripts/UrnADECMASTLib/Controllers/BaseController.js"></script>
-    <script src="scripts/UrnADECMASTLib/Controllers/ADECMASTBindingController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/BaseController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/BibcodeQueryBindingController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/OAuthAuthorizationController.js"></script>
 
 
     <!-- Models -->
-    <script src="scripts/UrnADECMASTLib/Models/BaseModel.js"></script>
-    <script src="scripts/UrnADECMASTLib/Models/UrnADECMASTSummaryResult.js"></script>
-    <script src="scripts/UrnADECMASTLib/Models/DoGetSummaryResponse.js"></script>
-    <script src="scripts/UrnADECMASTLib/Models/DoGetSummary.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/BaseModel.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/ReturnBibcode.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
 
     ...
 </head>
@@ -141,7 +148,7 @@ In order to use the generated SDK's modules, controllers and factories, the proj
 Add the dependency like this:
 
 ```js
-var app = angular.module('myApp', ['UrnADECMASTLib']);
+var app = angular.module('myApp', ['BibcodeQueryLib']);
 ```
 At this point, the SDK has been successfully included in your project. Further steps include using a service/factory from the generated SDK. To see working example of this, please head on [over here](#list-of-controllers) and choose any class to see its functions and example usage.  
 
@@ -155,12 +162,174 @@ To run the app, simply open up the `index.html` file in a browser.
 
 The Angular Application can be initialized as following:
 ```JavaScript
-var app = angular.module('myApp', [UrnADECMASTLib]);
+var app = angular.module('myApp', [BibcodeQueryLib]);
 // now controllers/services can be created which import
 // the factories provided by the sdk
 ```
-### 
+### Authentication
+In order to setup authentication and initialization of the Angular App, you need the following information.
 
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
+
+```JavaScript
+var app = angular.module('myApp', [BibcodeQueryLib]);
+app.factory('config', function($scope, Configuration) 
+{
+    return {
+        setConfigVars: function() {
+            // Configuration parameters and credentials
+            Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+            Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+            
+        }
+    };
+});
+```
+
+You must now authorize the client.
+
+### Authorizing your client
+
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the OAuth client credentials for an *access token*.
+The access token is an object containing information for authorizing client requests.
+
+ You must pass the *[scopes](#scopes)* for which you need permission to access.
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager, OAuthScopeEnum) {
+    var scopes = [OAuthScopeEnum.FDG, OAuthScopeEnum.DFG];
+    var promise = OAuthManager.authorize(scopes);
+    promise.then(function(success) {
+        // client successfully authorized
+    });
+});
+```
+
+The client can now make authorized endpoint calls.
+
+
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `BibcodeQueryLib/Models/OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `FDG` |  |
+| `DFG` |  |
+
+
+
+
+### Creating a client from an existing token
+
+To authorize a client from an existing access token, just set the access token in `Configuration` along with the other configuration parameters:
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('config', function($scope, Configuration) {
+    Configuration.oAuthToken = sessionStorage.getItem('token'); // the existing token stored in sessionStorage of browser
+});
+```
+
+
+### Complete example
+In this example, `app.js` will check if the access token has been obtained. If it hasn't been, the client needs to be authorized first.
+After authorization, endpoint calls can be made.
+
+#### `app.js`
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager, Configuration, OAuthScopeEnum) {
+    Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+    Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+
+    Configuration.oAuthTokenUpdateCallback = function(token) {
+        sessionStorage.setItem('token', token);
+    }
+
+    if (OAuthManager.isTokenSet()) {
+        // token was already set, make API calls as required
+    } else {
+        // since token is not set, client needs to obtain
+        // an access token first
+        var scopes = [OAuthScopeEnum.FDG, OAuthScopeEnum.DFG];
+        var promise = OAuthManager.authorize(scopes);
+        promise.then(function(success) {
+            // client successfully authorized
+            // make endpoint calls as required
+        });
+    }
+
+});
+```
+
+#### `index.html`
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OAuthTest</title>
+    <meta charset="UTF8">
+
+    <script src="scripts/angular.min.js"></script>
+
+    <script src="scripts/BibcodeQueryLib/Module.js"></script>
+    <script src="scripts/BibcodeQueryLib/Configuration.js"></script>
+    <script src="scripts/BibcodeQueryLib/ModelFactory.js"></script>
+    <script src="scripts/BibcodeQueryLib/ObjectMapper.js"></script>
+    <script src="scripts/BibcodeQueryLib/APIHelper.js"></script>
+    <script src="scripts/BibcodeQueryLib/Servers.js"></script>
+    <script src="scripts/BibcodeQueryLib/Environments.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/RequestClient.js"></script>
+
+    <!-- API Controllers -->
+    <script src="scripts/BibcodeQueryLib/Controllers/BaseController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/BibcodeQueryBindingController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/OAuthAuthorizationController.js"></script>
+
+
+    <!-- Models -->
+    <script src="scripts/BibcodeQueryLib/Models/BaseModel.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/ReturnBibcode.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
+
+
+    <script src="scripts/BibcodeQueryLib/OAuthManager.js"></script>
+    <script src="scripts/app.js"></script>
+
+</head>
+
+
+<body ng-app="OAuthTest">
+    <div ng-controller="oauthClientController">
+
+    </div>
+</body>
+
+</html>
+```
 
 
 
@@ -168,32 +337,37 @@ var app = angular.module('myApp', [UrnADECMASTLib]);
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [ADECMASTBindingController](#adecmast_binding_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="adecmast_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ADECMASTBindingController") ADECMASTBindingController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` ADECMASTBindingController ``` class can be accessed via Dependency Injection.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, ADECMASTBindingController, DoGetSummaryResponse){
+	app.controller("testController", function($scope, BibcodeQueryBindingController, ReturnBibcode){
 	});
 ```
 
-### <a name="create_do_get_summary"></a>![Method: ](https://apidocs.io/img/method.png ".ADECMASTBindingController.createDoGetSummary") createDoGetSummary
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
 
-> doGetSummary
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
 
 
 ```javascript
-function createDoGetSummary(body)
+function getBibcode(bibcode, dbKey, dataType)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -202,11 +376,13 @@ function createDoGetSummary(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, ADECMASTBindingController, DoGetSummaryResponse){
-        var body = new DoGetSummary({"key":"value"});
+	app.controller("testController", function($scope, BibcodeQueryBindingController, ReturnBibcode){
+        var bibcode = 'bibcode';
+        var dbKey = db_key;
+        var dataType = data_type;
 
 
-		var result = ADECMASTBindingController.createDoGetSummary(body);
+		var result = BibcodeQueryBindingController.getBibcode(bibcode, dbKey, dataType);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -218,6 +394,129 @@ function createDoGetSummary(body)
 
 	});
 ```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed via Dependency Injection.
+
+```js
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+	});
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken(authorization, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRequestToken(authorization, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken(authorization, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRequestToken(authorization, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 

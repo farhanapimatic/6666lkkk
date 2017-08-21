@@ -1,5 +1,7 @@
 # Getting started
 
+this is new file that i am looking at
+
 ## How to Build
 
 
@@ -11,58 +13,69 @@ Open command prompt and type ```pod --version```. This should display the curren
 Using command line, navigate to the directory containing the generated files (including ```PodFile```) for the SDK. 
 Run the command ```pod install```. This should install all the required dependencies and create the ```pods``` directory in your project directory.
 
-![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
-Open the project workspace using the (UrnADECMAST.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
+Open the project workspace using the (BibcodeQuery.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 
 ## How to Use
 
 The generated code is a Cocoa Touch Static Library which can be used in any iOS project. The support for these generated libraries go all the way back to iOS 6.
 
-The following section explains how to use the UrnADECMAST library in a new iOS project.     
+The following section explains how to use the BibcodeQuery library in a new iOS project.     
 ### 1. Starting a new project
 To start a new project, left-click on the ```Create a new Xcode project```.
-![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Next, choose **Single View Application** and click ```Next```.
-![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Provide **Test-Project** as the product name click ```Next```.
-![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Choose the desired location of your project folder and click ```Create```.
-![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 ### 2. Adding the static library dependency
 To add this dependency open a terminal and navigate to your project folder. Next, input ```pod init``` and press enter.
-![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
-Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'UrnADECMAST', :path => 'Vendor/UrnADECMAST'
-![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'BibcodeQuery', :path => 'Vendor/BibcodeQuery'
+![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Execute `pod install` from terminal to install the dependecy in your project. This would add the dependency to the newly created test project.
-![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 
 ## How to Test
 
 Unit tests in this SDK can be run using Xcode. 
 
-First build the SDK as shown in the steps above and naivgate to the project directory and open the UrnADECMAST.xcworkspace file.
+First build the SDK as shown in the steps above and naivgate to the project directory and open the BibcodeQuery.xcworkspace file.
 
 Go to the test explorer in Xcode as shown in the picture below and click on `run tests` from the menu. 
-![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=urn%3AADEC_MAST-ObjC&workspaceName=UrnADECMAST&projectName=UrnADECMAST&rootNamespace=UrnADECMAST)
+![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
 
 Configuration variables can be set as following.
 ```Objc
+// Configuration parameters and credentials
+Configuration_OAuthClientId = "Configuration_OAuthClientId"; // OAuth 2 Client ID
+Configuration_OAuthClientSecret = "Configuration_OAuthClientSecret"; // OAuth 2 Client Secret
 
 ```
 
@@ -70,30 +83,37 @@ Configuration variables can be set as following.
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [ADECMASTBindingController](#adecmast_binding_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="adecmast_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ADECMASTBindingController") ADECMASTBindingController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 ```objc
-ADECMASTBinding* aDECMASTBinding = [[ADECMASTBinding alloc]init] ;
+BibcodeQueryBinding* bibcodeQueryBinding = [[BibcodeQueryBinding alloc]init] ;
 ```
 
-### <a name="create_do_get_summary_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".ADECMASTBindingController.createDoGetSummaryAsyncWithBody") createDoGetSummaryAsyncWithBody
+### <a name="get_bibcode_async_with_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcodeAsyncWithBibcode") getBibcodeAsyncWithBibcode
 
-> doGetSummary
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
 
 
 ```objc
-function createDoGetSummaryAsyncWithBody:(DoGetSummary*) body
-                completionBlock:(CompletedPostDoGetSummary) onCompleted(body)
+function getBibcodeAsyncWithBibcode:(NSString*) bibcode
+                dbKey:(NSString*) dbKey
+                dataType:(NSString*) dataType
+                completionBlock:(CompletedGetBibcode) onCompleted(bibcode dbKey : dbKey dataType : dataType)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -103,12 +123,73 @@ function createDoGetSummaryAsyncWithBody:(DoGetSummary*) body
 
 ```objc
     // Parameters for the API call
-    DoGetSummary* body = [[DoGetSummary alloc]init];
+    NSString* bibcode = @"bibcode";
+    NSString* dbKey = @"db_key";
+    NSString* dataType = @"data_type";
 
-    [self.aDECMASTBinding createDoGetSummaryAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, DoGetSummaryResponse* response, NSError* error) { 
+    [self.bibcodeQueryBinding getBibcodeAsyncWithBibcode: bibcode dbKey : dbKey dataType : dataType  completionBlock:^(BOOL success, HttpContext* context, ReturnBibcode* response, NSError* error) { 
        //Add code here
     }];
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+```objc
+OAuthAuthorization* oAuthAuthorization = [[OAuthAuthorization alloc]init] ;
+```
+
+### <a name="create_request_token_async_with_authorization"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestTokenAsyncWithAuthorization") createRequestTokenAsyncWithAuthorization
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```objc
+function createRequestTokenAsyncWithAuthorization:(NSString*) authorization
+                scope:(NSString*) scope
+                fieldParameters:(NSDictionary*) fieldParameters
+                completionBlock:(CompletedPostRequestToken) onCompleted(authorization scope : scope  formParameters : formParams)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    NSString* authorization = @"Authorization";
+    NSString* scope = @"scope";
+    // Dictionary for optional form parameters
+    NSMutableDictionary* formParamsMutable = [[NSMutableDictionary alloc] init];
+    NSDictionary *formParams= [formParamsMutable copy];
+
+    [self.oAuthAuthorization createRequestTokenAsyncWithAuthorization: authorization scope : scope  formParameters : formParams  completionBlock:^(BOOL success, HttpContext* context, OAuthToken* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)
